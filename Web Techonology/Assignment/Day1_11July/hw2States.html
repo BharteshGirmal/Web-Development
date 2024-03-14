@@ -1,0 +1,47 @@
+<!--
+      2.  Write an html that shows two radio buttons A and B
+          if user clicks A radio button show a drop-down of states in India
+	if user clicks B radio button show a drop down of countries in the world
+-->
+<html>
+      <script>
+            function fun1()
+            {
+                  var state=["Maharashtra","Gujrat","Goa","Madhya-Pradesh","Asam","Uttar-Pradesh"];
+                  var counrty=["India","America","France","England","Japan","China","Dubai"];
+
+                  var arr=document.getElementById("state")
+                  var arr1=document.getElementById("state").value
+                  var brr=document.getElementById("country")
+                  var brr1=document.getElementById("country").value
+
+                  var options="";
+                  if(arr.checked == true)
+                  {
+                        alert("You selected the "+arr1)
+                        for(var i=0;i<state.length;i++)
+                        {
+                              options=options+"<option>"+state[i]+"</option>"
+                        }
+                        document.getElementById("sele").innerHTML=options
+                  }
+                  if(brr.checked == true)
+                  {
+                        alert("You Selected the ",brr.value);
+                        for(var i=0;i<counrty.length;i++)
+                        {
+                              options=options+"<option>"+counrty[i]+"</option>"
+                        }
+                        document.getElementById("sele").innerHTML=options
+                  }
+            }
+      </script>
+      <body>
+           <h2>choose any of the following option</h2>
+           State : <input type="radio" name="A" id="state" value="state" onclick="fun1()"/> <br/><br/>
+           Country : <input type="radio" name="A" id="country" value="country" onclick="fun1()"/> <br/><br/>
+           <select id="sele">
+
+           </select>
+      </body>
+</html>

@@ -1,0 +1,85 @@
+HW12-Jul-22
+1. Write an internal style sheet in an html that has
+	 background color A for all divs
+		 background color B for all  <p>
+			 background color C for all <span>
+
+	write multiple nested div span and p tags , observe output
+
+2. Write an internal style sheet that defines a common font size for all tags.  the bg color for p tags within div tags should by red
+		the font color for all p tags should be white
+   All divs should have blue dashed border
+
+3. Write external stylesheets  a.css and b.css
+	include them in hw.html
+		in a.css write class  .backgroundideas  that gives bgcolor and border settings
+		in b.css write class .foregroundidea that gives font color, font size and font style settings
+	apply the classes exquisitely to some p and span tags
+	apply the classes together to div tag
+
+4.  write a JS file that  has a function alpha that accepts three functions as parameters 
+	the parameter function1 takes 2 strings as parameters
+	the parameter function2 takes 3 numbers as parameters
+       the parameter function3 takes rest parameter as parameter
+
+     the alpha function should call the 3 functions one after the other with proper parameters.
+	the functions are supposed to print all the parameters in different ways.
+
+call the alpha function 3 times and pass different functions to it.
+
+
+5.  Write a JS file that has a function factorial that accepts a num with a default value 2. 
+	the function returns the factorial of the number. call the function 
+	1) without passing parameter, 
+	2 )with a single parameter , print the return value
+
+6. Write a JS file that has a function factory 
+		this function has an array of functions
+		the factory function accepts an index parameter
+		it will return the function at the given index to the caller
+the caller will call the function .
+
+7. Write an HTML file that accepts a number from the user
+		and on button click - display the maths table of that number 
+		for ex if the number is 2 
+		2*1=2
+		2*2=4
+		...
+		2*10 =20
+	  the maths-table should be white font, background red
+		double rounded border
+
+
+
+	
+
+
+HW11-July-22
+
+1. Write an html that shows a check box Show Poem
+	if the check box is checked show a poem twinkle ,twinkle...
+	if the check box is unchecked remove the poem from the screen
+
+2.  Write an html that shows two radio buttons A and B
+          if user clicks A radio button show a drop-down of states in India
+	if user clicks B radio button show a drop down of countries in the world
+
+3.  Write an html that shows text field  and a button and a table
+		when the button is clicked add the content of text field as a new row in the table.
+
+4.  Write an html that shows a table of squares from 1 to 10,000
+		the table has 2 columns 
+			2     4
+                       3     9
+                       4    16
+                      ...
+			..
+			999    998001
+
+5.   Write an html that shows a textfield and a showPrime button
+		when the user enters a number and clicks button
+			tell if the number is PRIME or NOT
+	        {HINT :  use parseInt( )  API    }
+
+
+		

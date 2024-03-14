@@ -1,0 +1,86 @@
+<!--
+      5.  write an html that acceps two numbers in two text fields
+		show 4 buttons  add subtract divide multiply
+		when any button is clicked apply the operation and show result in a p tag
+-->
+
+<html>
+      <head>
+            <script>
+                  function add()
+                  {
+                        var n1=parseInt(document.getElementById("num1").value);
+                        var n2=parseInt(document.getElementById("num2").value);
+                        const n3=(n1+n2);
+                       document.getElementById("p1").innerHTML="<b>The Addition : "+n3+" </b>";
+                       return true;
+                  }
+                  function sub()
+                  {
+                        var n1=parseInt(document.getElementById("num1").value);
+                        var n2=parseInt(document.getElementById("num2").value);
+                        const n3=n1-n2;
+                       document.getElementById("p1").innerHTML="<b>The subtraction : "+n3+" </b>";
+                       return true;
+                  }
+
+                  function mul()
+                  {
+                        var n1=parseInt(document.getElementById("num1").value);
+                        var n2=parseInt(document.getElementById("num2").value);
+                        const n3=n1*n2;
+                       document.getElementById("p1").innerHTML="<b>The Multiplication : "+n3+" </b>";
+                       return true;
+                  }
+
+                  function div()
+                  {
+                        var n1=parseInt(document.getElementById("num1").value);
+                        var n2=parseInt(document.getElementById("num2").value);
+                        const n3=n1/n2;
+                       document.getElementById("p1").innerHTML="<b>The Division : "+n3+" </b>";
+                       return true;
+                  }
+            </script>
+            <style>
+                  #c1
+                  {
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        color: deeppink;
+                        font: bold;
+                        font-size: 2em;
+                  }
+                  fieldset
+                  {
+                        border: brown;
+                        width: 12cm;
+                        height: 9cm;
+                        border-style:groove;
+                        border-width: 7px;
+                  }
+            </style>
+      </head>
+      <body>
+            <center id="c1">
+                  Arithmatic Calculator
+            </center>
+            <br>
+            <center>
+                  <fieldset>
+                        <h2>Enter the 1st Number</h2>
+                        <input type="text" name="num1" id="num1">
+                        <h2>Enter the 2nd Number</h2>
+                        <input type="text" name="num2" id="num2">
+                        <br><br>
+                        <button value="Addition" id="add" onclick="return add()">Addition</button>
+                        <button value="Subtraction" id="sub" onclick="return sub()">Subtraction</button>
+                        <br>
+                        <button value="Multipliction" id="mul" onclick="return mul()">Multipliction</button>
+                        <button value="Division" id="div" onclick="return div()">Division</button>
+                        <br>
+                        <p id="p1"></p>
+                        
+                  </fieldset>
+            </center>
+      </body>
+</html>

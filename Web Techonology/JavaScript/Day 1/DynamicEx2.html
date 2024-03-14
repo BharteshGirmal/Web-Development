@@ -1,0 +1,24 @@
+<html>
+      <script>
+            function fun1()
+            {
+                  console.log("fun1 is get called ")
+                  var options="";
+                  for( var i=0;i<=120;i++)
+                  {
+                        options=options+"<option>"+i+"<option>";
+                  }
+                  document.getElementById("sel").innerHTML =options;
+            }
+      </script>
+
+      <body>
+            <center>
+                  <select id="sel">
+                        
+                        <option></option>   
+                  </select>
+                  <button onclick="fun1()">Ok</button>
+            </center>
+      </body>
+</html>

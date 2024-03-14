@@ -1,0 +1,60 @@
+<!--
+      6.  write an html that shows an array of 10 names such that each name has check box near it
+			user may check one or many check boxes and click a delete button
+			delete all the names that are checked and show the remaining names in the array
+-->
+
+<html>
+      <head>
+            <script>
+                  const lists=["White","Pink","Yellow","Green","Blue","Black","Voilet","Red"];
+                  var names=["White","Pink","Yellow","Green","Blue","Black","Voilet","Red"];
+
+                  function Function1()
+                  {
+                     console.log("Function1 is called ...");
+                     var str="";
+                     for(var i=0;i<lists.length;i++)
+                     {
+                        str=str+`<input type="checkbox" value="${lists[i]}" name="p+${i}" id="i+${i}" onclick="Function2(this.value,this.id)" />${lists[i]}<br/>` 
+                     } 
+                     document.getElementById("l1").innerHTML=str;  
+                  }
+
+                  function Function2(val , id )
+                  {
+                        if(document.getElementById(id).checked)
+                        {
+                              var ind=names.indexOf(val);
+                              names.slice(val,1);
+                              document.getElementById("sp").innerHTML=names;
+                              return true     
+                        }
+                        else
+                        {
+                             var ind=lists.indexOf(val); 
+                             names.splice(ind,0,lists[ind]);
+                             console.log("val ;",val,"ind",ind,"list : ",list[ind],"names : ",names)
+                             document.getElementById("sp").innerHTML=names;
+                        }
+                  }
+            </script>
+            <style>
+
+            </style>
+            <center>
+                  <b><u><i><h1>Array Of Names</h1></i></u></b>
+            </center>
+      </head>
+      <body onload="Function1()">
+            <fieldset>
+                  <h1><b>Select the Any of the Name of Following Array</b></h1>
+            <form id="list">
+                  <center id="l1">
+
+                  </center>
+            </form>
+            <p id="sp"></p>
+            </fieldset>
+      </body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+      3.write an html that has a date input field . 
+      show the date entered by user as dd-MON-yyyy format. 
+      show the week day on that date in a <p> tag
+      like MONDAY , THURSDAY  etc  [ use onchange event  ]
+-->
+<html>
+      <head>
+            <script>
+                  //var dd= new Date();
+                  var arr=["Sunday","Monday","Tuesday","Wendsday","Thursday","Friday","Saturday"]
+                  function DateFun()
+                  {
+                        var d=document.getElementById("date2").value;
+                        dd=new Date(d);
+                        document.getElementById("p1").innerHTML="<b>Date Fromat :"+dd.getDate()+"/"+dd.getMonth()+"/"+dd.getFullYear()+"</b>";
+                        console.log(dd);
+                        document.getElementById("p2").innerHTML="<b>Day Of the Date :"+arr[dd.getDay()]+"</b>";
+                        console.log(dd);
+                  }
+            </script>
+            <style>
+                  html
+                  {
+                        color: beige;
+                        background-color: rgb(22, 3, 3);
+                        margin: 80px 80px;
+                        padding: 40px 400px;
+                        font-size: larger;
+                  }
+                  center
+                  {
+                        align-self: center;
+                        border-color: beige;
+                        border-radius: 8px;
+                        border-style: groove;
+                        width: 10cm;
+                        height: 8cm;
+                        border-width: 10px;
+                  }
+            </style>
+      </head>
+      <body>
+            <center>
+            <form id="dateform" onsubmit="return DateFun()">
+                  <h1>Enter the Date </h1>
+                  <br/>
+                  <input type="date" name="d" id="date2" onchange="DateFun()"/>
+                  <br>
+                  <p id="p1"></p>
+                  <p id="p2"></p>
+            </form>
+            </center>
+      </body>
+</html>

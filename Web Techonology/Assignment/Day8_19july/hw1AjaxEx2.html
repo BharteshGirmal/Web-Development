@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+        <script>
+
+            $(document).ready(()=>
+            {
+                console.log("button")
+                $("button").click(()=>
+                {
+
+                    let settings = {
+                                      url:`http://localhost:8080/product/getproduct` ,
+                                      method:"GET",
+                                      async:true,
+                                      success:(response)=>
+                                      {
+                                        console.log("Get Data From Product : ",response);
+                                        let str = "<ol>"
+                                            let names = (response.map((user)=>{return user.id+" "+user.name+" "+user.cost}));
+                                            for(var i=0;i<names.length;i++)
+                                            {
+                                                console.log(names);
+                                                str += `<li>${names[i]}</li>`
+                                            }
+                                            str +="</ol>"
+                                        $("#sp").html(str);
+                                      }
+                                  }
+                                  $.ajax(settings);
+                });
+            });
+        </script>
+    
+    </head>
+    <body>
+
+        <button >GET Data From Server(Product Table)</button>
+        <span id="sp"></span>
+
+    </body>
+</html>

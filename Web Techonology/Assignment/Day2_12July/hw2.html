@@ -1,0 +1,55 @@
+<!--
+      2. Write an internal style sheet that defines a common font size for all tags.  
+            the bg color for p tags within div tags should by red
+		the font color for all p tags should be white
+            All divs should have blue dashed border
+-->
+
+<html>
+      <title>HW2</title>
+      <head>
+            <style>
+                  body
+                  {
+                        font: bold;
+                        font-size: medium;
+                        background-color:gray;
+                  }
+
+                  p,#d1 
+                  {
+                        color: red;
+                  }
+
+                  p
+                  {
+                        color: white;
+                  }
+
+                  div
+                  {
+                        border: 2px;
+                        border-style: dashed;
+                        border-color: blue;
+                  }
+
+            </style>
+      </head>
+      <body>
+            <center>
+                  <h2> Welcome ....</h2>
+                  <p>
+                        This is a Paragraph
+                  </p>
+                  <div>
+                        This is a Division
+                  </div>
+                  
+                  <p id="d1">
+                        <div id="d1">
+                              This is a Div tag under P tag
+                        </div>
+                  </p>
+            </center>
+      </body>
+</html>

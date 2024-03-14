@@ -1,0 +1,192 @@
+HW20-Jul-22
+1. Write a React class component IsPrime 
+	it accepts a number in props and shows whether it is a prime or not
+
+2. Write a React function component Calc
+		it accepts two props 
+		 -  nums = array of 2 numbers
+		 -op  = can have any one operation value from ( plus, minus ,mul,divide )
+
+		The calc performs the operation and shows the result
+		as    3 plus 5 = 8
+
+     Use the Calc tag 5 times in App.js with different values.
+
+3.  Write a React class component  DoItTwice
+			it accepts a prop func   that accepts a function name
+			it calls the function twice and concatenates its result
+			and displays it
+		
+
+
+
+HW19-jul-22
+1. Use the spring rest controller for Product table crud operation done earlier
+	A. Use Jquery and ajax to insert a new product  [ fire POST request to spring rest controller , pass JSON object ]
+        B. Use Jquery and ajax to show all product details in a table format. [ fire GET request to spring rest controller  ]
+
+2. Use reqres.in  APIs , use JQUERY 
+		A.  fire PUT query 
+		B. fire DELETE query 
+
+3.  Add Welcome.js in React application as discussed in class, in the same way  ---
+	A.   Add GoodMorning.js that shows good morning in p tag
+			add the GoodMorning tag to App.js after Welcome
+      B.  Add  GoodBye.js that shows good bye in p tag
+			add the  GoodBye tag to App.js as the last line of display 
+
+
+	
+
+HW15-jul-22
+1.  Write a Javascript  mylib.js [Hint include this js file using <script src=....  >  ]
+		create a class Product using ES6 class keyword
+		the product has a name,desc and cost properties
+		the product has a show method that shows all properties
+
+   Write an html that has 3 textfields to accept name desc and cost
+	when user clicks a save button create a product object using values from textfields and add it to an array 
+		show the array in a table format below
+
+
+2.  Write an HTML that has textfields for first name and lastname
+	the names cannot be blank, the names cannot have numbers
+	the first letter of fname and lname must be capital 
+	the remaining letters must be small case
+	[HINT use html validations and regExp  ]
+
+3.  Write  patterns that accept the following
+	A]  strings having 1 or more occurences of only numbers 
+       B]  strings that have one or more occurences of only uppercase characters
+	C] Java class name in camel case 
+	     java method name in camel case
+	D]  first char caps, second char should be a digit or nothing
+       
+
+4.  Practive ooex1,ooex2 and ooex3 js as done in class
+
+		
+
+
+HW14-jul-22
+1. Write an html that has a text field that accepts a uname and a password to be registered
+	write a function validateuname()  to validate uname - must not be blank, size > 8 , must not have spaces in between
+	write a function validatepwd() to validate pwd - must not be blank , must be >8 less than 15, must not have spaces in between, must have at least one digit, one special char ( _,- ,#,$ ) , one upper case char, one lower case char , first char must not be digit or special char
+
+	only if the values are valid the OK button should submit to next page , else it should not be submitted
+
+
+2. Write an html that has a age input number Html element 
+		age should be in the range of 18 to 110 , if not then  show a message in red below the input field
+		use oninput event
+
+3.  write an html that has a date input field . show the date entered by user as dd-MON-yyyy format. show the week day on that date in a <p> tag
+  like MONDAY , THURSDAY  etc  [ use onchange event  ]
+
+4.  write an html that has a input text field . when user enters  a data in the textfield add the first 3 letters of the text in an array in uppercase
+		show the array in <ul>   [use onchange event ]
+
+5.  write an html that acceps two numbers in two text fields
+		show 4 buttons  add subtract divide multiply
+		when any button is clicked apply the operation and show result in a p tag
+
+6.  write an html that shows an array of 10 names such that each name has check box near it
+			user may check one or many check boxes and click a delete button
+			delete all the names that are checked and show the remaining names in the array
+
+7.  write an html shows an array of 10 numbers
+		show a dropdown -  show squares, show cubes , show factorials 
+		onchange of the dropdown show the modified array instead of the original array 
+		[ use map function  ]
+
+
+
+	
+
+
+
+		
+
+
+HW12-Jul-22
+1. Write an internal style sheet in an html that has
+	 background color A for all divs
+		 background color B for all  <p>
+			 background color C for all <span>
+
+	write multiple nested div span and p tags , observe output
+
+2. Write an internal style sheet that defines a common font size for all tags.  the bg color for p tags within div tags should by red
+		the font color for all p tags should be white
+   All divs should have blue dashed border
+
+3. Write external stylesheets  a.css and b.css
+	include them in hw.html
+		in a.css write class  .backgroundideas  that gives bgcolor and border settings
+		in b.css write class .foregroundidea that gives font color, font size and font style settings
+	apply the classes exquisitely to some p and span tags
+	apply the classes together to div tag
+
+4.  write a JS file that  has a function alpha that accepts three functions as parameters 
+	the parameter function1 takes 2 strings as parameters
+	the parameter function2 takes 3 numbers as parameters
+       the parameter function3 takes rest parameter as parameter
+
+     the alpha function should call the 3 functions one after the other with proper parameters.
+	the functions are supposed to print all the parameters in different ways.
+
+call the alpha function 3 times and pass different functions to it.
+
+
+5.  Write a JS file that has a function factorial that accepts a num with a default value 2. the function returns the factorial of the number. call the function 1) without passing parameter, 2 )with a single parameter , print the return value
+
+6. Write a JS file that has a function factory 
+		this function has an array of functions
+		the factory function accepts an index parameter
+		it will return the function at the given index to the caller
+the caller will call the function .
+
+7. Write an HTML file that accepts a number from the user
+		and on button click - display the maths table of that number 
+		for ex if the number is 2 
+		2*1=2
+		2*2=4
+		...
+		2*10 =20
+	  the maths-table should be white font, background red
+		double rounded border
+
+
+
+	
+
+
+HW11-July-22
+
+1. Write an html that shows a check box Show Poem
+	if the check box is checked show a poem twinkle ,twinkle...
+	if the check box is unchecked remove the poem from the screen
+
+2.  Write an html that shows two radio buttons A and B
+          if user clicks A radio button show a drop-down of states in India
+	if user clicks B radio button show a drop down of countries in the world
+
+3.  Write an html that shows text field  and a button and a table
+		when the button is clicked add the content of text field as a new row in the table.
+
+4.  Write an html that shows a table of squares from 1 to 10,000
+		the table has 2 columns 
+			2     4
+                       3     9
+                       4    16
+                      ...
+			..
+			999    998001
+
+5.   Write an html that shows a textfield and a showPrime button
+		when the user enters a number and clicks button
+			tell if the number is PRIME or NOT
+	        {HINT :  use parseInt( )  API    }
+
+
+		

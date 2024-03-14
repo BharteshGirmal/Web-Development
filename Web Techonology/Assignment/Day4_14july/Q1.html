@@ -1,0 +1,124 @@
+<!--
+      1. Write an html that has a text field that accepts a uname and a password to be registered
+	write a function validateuname()  to validate uname - must not be blank, size > 8 ,
+       must not have spaces in between
+	write a function validatepwd() to validate pwd - must not be blank , must be >8 less than 15, must not have spaces in between, must have at least one digit, one special char ( _,- ,#,$ ) , one upper case char, one lower case char , first char must not be digit or special char
+
+	only if the values are valid the OK button should submit to next page , else it should not be submitted
+-->
+
+<html>
+      <head>
+            <style>
+                  pre
+                  {
+                        color: red;
+                        font-family: Arial, Helvetica, sans-serif;
+                        font-style: oblique;
+                        font-size: x-small;
+                  }
+            </style>
+
+            <script>
+                  function ValidateUser()
+                  {
+                        var uname=document.forms.form1.uname.value;
+                        if(uname.length < 8)
+                        {
+                              document.getElementById("p1").innerHTML="The User Name should be Greater than 8";
+                              return false;
+                        }
+                        if(uname.trim.length)
+                        {
+                              document.getElementById("p1").innerHTML="The Name should Not contain the blank Space";
+                              return false;
+                        }
+                        else 
+                              document.getElementById("p1").innerHTML="";
+                              return true;
+                  }
+
+                  function ValidatePwd()
+                  {
+                        var pass2=document.forms.form1.pass.value;
+                        if(pass2== "")
+                        {
+                              document.getElementById("p2").innerHTML="Please Enter the Password";
+                              return false;
+                        }
+
+                        if(pass2.length < 8)
+                        {
+                              document.getElementById("p2").innerHTML="The Password Must be Greater than 8";
+                              return false;
+                        }
+
+                         // Blank Spaces
+                        if( pass2.trim.length.inclues="" )
+                        {
+                              document.getElementById("p2").innerHTML="The password Should not contains Spaces";
+                              return false;
+                        }
+
+                        const capital=/^[A-Z]{1}/; // Capital Letter
+                        if( !pass2.match(capital) )
+                        {
+                              document.getElementById("p2").innerHTML="The password Must Contains a Captial Letter";
+                              return false;
+                        }
+
+                        const lower=/[a-z]/; // Lowecase Letter
+                        if( !pass2.match(lower) )
+                        {
+                              document.getElementById("p2").innerHTML="The password Must Contains lowercase Letters";
+                              return false;
+                        }
+
+                        const num=/[0-9]{1}/; // digit
+                        if( !pass2.match(num) )
+                        {
+                              document.getElementById("p2").innerHTML="The password Must Contains One Digit";
+                              return false;
+                        }
+
+                        const sp=/[@,&,*,^,#]/; // digit
+                        if( !pass2.match(sp) )
+                        {
+                              document.getElementById("p2").innerHTML="The password Must Contains A Special Character";
+                              return false;
+                        }
+
+                        if(pass2.length > 15)
+                        {
+                              document.getElementById("p2").innerHTML="The Password should not be Less than 15";
+                              return false;
+                        }
+
+                        //var spchar= /^[A-Za-z]\w{7,14}$/;
+                        else
+                        {
+                              document.getElementById("p2").innerHTML="";
+                              alert("Password is Correct ...");
+                              return true;
+                        }
+                  }
+        
+            </script>
+      </head>
+            <center>
+                  <h1><b><i><u>Login Details</u></i></b></h1>
+            </center>
+      <body>
+            <center>
+            <form id="form1">
+                <b><i>Enter the UserName  :  </i></b>
+                <input type="text" name="username" id="uname" oninput=" return ValidateUser()"/><br/>
+                <pre id="p1"></pre>
+                <b><i>Enter the Password  :  </i></b>
+                <input type="password" name="password" id="pass" oninput="return ValidatePwd()"><br/><br/>
+                <pre id="p2"></pre> 
+                <input type="submit" name="ok" value="Register" id="save">
+            </form> 
+            </center>
+      </body>
+</html>

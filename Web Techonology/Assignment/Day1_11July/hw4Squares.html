@@ -1,0 +1,26 @@
+<!--
+      4.  Write an html that shows a table of squares from 1 to 10,000
+		the table has 2 columns 
+-->
+<html>
+      <script>
+            function squares()
+            {
+                 var element=document.getElementById("numbers") 
+                 var str="";
+                 str=str+"<table border='4'><tr><th>Number</th><th>Square</th></tr>"
+                 for(var i=1;i<1000;i++)
+                 {
+                  str+="<tr><td>"+i+"</td><td>"+i*i+"</td>/<tr>"
+                 }
+                 str=str+"</tabel>"
+                 element=element.innerHTML=str
+            }
+      </script>
+      <body>
+            <b>Click the Below Button </b>
+            <br/>
+            <button onclick="squares()">Show Squares</button>
+            <span id="numbers"></span>
+      </body>
+</html>

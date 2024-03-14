@@ -1,0 +1,55 @@
+<!--
+      3.  Write  patterns that accept the following
+	A]  strings having 1 or more occurences of only numbers 
+       B]  strings that have one or more occurences of only uppercase characters
+	C] Java class name in camel case 
+	     java method name in camel case
+	D]  first char caps, second char should be a digit or nothing
+-->
+<html>
+      <head>
+            <style>
+                  input:valid
+                  {
+                        color: midnightblue;
+                        background-color:aqua;
+                        font-size: medium;
+                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                  }
+                  input:invalid
+                  {
+                        color: black;
+                        background-color: deeppink;
+                        font-size: medium;
+                        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif
+                  }
+                  fieldset
+                  {
+                        border-width: 10px;
+                        height: 13cm;
+                        width: 18cm;
+                        border-style: double;
+                        border-color: rgb(0, 0, 0);
+                        border-radius: 30px;
+                  }
+            </style>
+            <center><h1><b><i>--------- Patterns ---------</i></b></h1></center>
+      </head>
+      <body>
+            <center>
+                  <fieldset>
+                        <h2>Strings having only numbers</h2>
+                        <input type="text" pattern="[0-9]+" required>
+                        <h2>Strings having only uppercase characters</h2>
+                        <input type="text" pattern="[A-Z]+" required>
+                        <h2>First Letter is Captial second char is a digit or nothing</h2>
+                        <input type="text" pattern="^[A-Z]{1}[0-9]*" required>
+                        <h2>Java class name in Camel Case</h2>
+                        <input type="text" pattern= "^[A-Z][a-z]+([A-Z][a-z \d]+)*$" required>
+                        <h2>Java method name in camel case</h2>
+                        <input type="text" pattern= "^[a-z]+([A-Z]{1}[a-z]+)*$"  required>
+
+                  </fieldset>
+            </center>
+      </body>
+</html>

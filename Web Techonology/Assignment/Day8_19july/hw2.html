@@ -1,0 +1,151 @@
+<html>
+      <head>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+            <script>
+                  $(document).ready(()=>
+                  {
+                        $("#delete").click(()=>
+                        {
+                              let pid=$("#pid").val();
+                              let settings={url:"http://localhost:8080/product/deleteproduct?id="+pid,
+                                          method:"delete",
+                                          async:true, 
+                                          success:(response)=>
+                                          {
+                                                console.log(response);
+                                                console.log("The Data is Deleted .... ")
+                                          //       let names = (response.map((user)=>{return user}));
+                                          //       var str=`<table border='6'>
+                                          //             <tr><th>Product ID</th><th>Product Name</th><th>Cost</th></tr>`
+                                          //       for(var i=0;i<names.length;i++)
+                                          //       {
+                                          //             console.log(names);
+                                          //             str+=`<tr><td>${names[i].id}</td><td>${names[i].name}</td><td>${names[i].cost}</td></tr>`
+                                          //       }
+                                          //       str+="</table>";
+                                          //       $("#sp1").html(str);
+                                           }};
+                              $.ajax(settings);
+                        });
+                  });
+
+                  $(document).ready(()=>
+                  {
+                        $("#update").click(()=>
+                        {
+                              let pid=$("#pid").val();
+                              let pname=$("#pname").val();
+                              let settings={url:`http://localhost:8080/product/updateproduct/${pid}/${pname}`,
+                                          method:"PUT",
+                                          async:true, 
+                                          success:(response)=>
+                                          {
+                                                console.log(response);
+                                                // let names = (response.map((user)=>{return user}));
+                                                // var str=`<table border='6'>
+                                                //       <tr><th>Product ID</th><th>Product Name</th><th>Cost</th></tr>`
+                                                // for(var i=0;i<names.length;i++)
+                                                // {
+                                                //       console.log(names);
+                                                //       str+=`<tr><td>${names[i].id}</td><td>${names[i].name}</td><td>${names[i].cost}</td></tr>`
+                                                // }
+                                                // str+="</table>";
+                                                // $("#sp2").html(str)
+                                                console.log("The Data is Updated .... ")
+                                          }};
+                              $.ajax(settings);
+                        });
+                  });
+
+                  $(document).ready(()=>
+                  {
+                        $("#show").click(()=>
+                        {
+                              let settings={url:`http://localhost:8080/product/getproduct`,
+                                          method:"GET",
+                                          async:true, 
+                                          success:(response)=>
+                                          {
+                                                console.log(response);
+                                                let names = (response.map((user)=>{return user}));
+                                                var str=`<table border='6'>
+                                                      <tr><th>Product ID</th><th>Product Name</th><th>Cost</th></tr>`
+                                                for(var i=0;i<names.length;i++)
+                                                {
+                                                      console.log(names);
+                                                      str+=`<tr><td>${names[i].id}</td><td>${names[i].name}</td><td>${names[i].cost}</td></tr>`
+                                                }
+                                                str+="</table>";
+                                                $("#sp3").html(str);
+                                          }};
+                              $.ajax(settings);
+                        });
+                  });
+            </script>
+            <style>
+                  html
+                  {
+                        background-color: aqua;
+                        
+                  }
+                  center
+                  {
+                        background-color: darkorchid;
+                        font-size: 2em;
+                        color:bisque;
+                  }
+                  button
+                  {
+                      padding: 10px;
+                      width:fit-content;
+                      height: max-content;
+                      font-size: 0.7em;
+                  }
+                  h1
+                  {
+                        background-color: burlywood;
+                        font-size: 3em;
+                        color: deeppink;
+                  }
+                  input
+                  {
+                        width: max-content;
+                        height: max-content;
+                        font-size: 1em;
+                  }
+                  span
+                  {
+                        background-color: tomato;
+                        color: black;
+                        font-size: larger;
+                  }
+                  table
+                  {
+                        font-size: 1em;
+                        color:yellow;
+                        border-color:  coral;
+                        font: bold;
+                  }
+            </style>
+      </head>
+      <body>
+            <center><h1><b><i>Ajax Methodlogy ...</i></b></h1></center>
+            <center>
+                  <h2>Enter the Product ID</h2>
+                  <input type="number"  id="pid" placeholder="Type here ...">
+                  <br>
+                  <h2>Enter the Product Name</h2>
+                  <input type="text"  id="pname" placeholder="Type here ...">
+                  <br><br>
+                  <button id="delete"><b>Delete Data From Server</b></button>
+                  <button id="update"><b>Update the Data from Server</b></button>
+                  <br>
+                  <button id="show"><b>Show All Products</b></button>
+                  <br><br>
+                  <span id="sp1"></span>
+                  <span id="sp2"></span>
+                  <span id="sp3"></span>
+                  <br>
+            </center>
+      </body>
+</html>

@@ -1,0 +1,55 @@
+<!--
+      
+2. Write an html that has a age input number Html element 
+	age should be in the range of 18 to 110 , if not then  
+      show a message in red below the input field
+	use oninput event
+-->
+
+<html>
+      <head>
+            <style>
+                  pre
+                  {
+                        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                        font-size: smaller;
+                        color: red;
+                  }
+                  form
+                  {
+                        font-size: 1em;
+                        font-family: Georgia, 'Times New Roman', Times, serif;
+                  }
+            </style>
+            <script>
+                  function AgeEvent()
+                  {
+                        var age=document.getElementById("age").value;
+                        if(age < 18 || age > 110 )
+                        {
+                              document.getElementById("p1").innerHTML="<b>The Age Should Be in the Range  18 to 110</b>";
+                              return false;
+                        }
+                        else
+                        {
+                              document.getElementById("p1").innerHTML="";
+                              return true;
+                        }
+                  }
+            </script>
+      </head>
+      <body>
+            <center>
+            <form id="form1" onsubmit="return AgeEvent()">
+                  <b><i><u><h1>Age</h1></u></i></b>
+                  <br/>
+                  <h2>Enter the Age </h2>
+                  <br/>
+                  <input type="number" name="num" id="age" oninput="return AgeEvent()">
+                  <br/>
+                  <pre id="p1"></pre>
+                  <input type="submit" value="Submit">
+            </form>
+            </center>
+      </body>
+</html>

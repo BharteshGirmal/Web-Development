@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+        <script>
+            $(document).ready(()=>
+            {
+                $("button").click(()=>
+                {
+                    var id = parseInt($("#id").val());
+                    var product = $("#pname").val();
+                    var cost = parseInt($("#cost").val());
+
+                    let setting = { 
+                                    url:`http://localhost:8080/product/add/${id}/${product}/${cost}`,
+                                    method:"POST",
+                                    async:true,                   
+                                    success:()=>
+                                        { 
+                                            console.log("data inserted  :");
+                                            $("#d1").html(`<h1>Product Is Insered.....</h1>`);
+                                        }
+                                    }             
+                $.ajax(setting);
+                })
+            });
+
+            $(document).ready(()=>
+            {
+                console.log("#b1")
+                $("#b1").click(()=>
+                {
+
+                    let setting2 = {
+                                      url:`http://localhost:8080/product/getproduct` ,
+                                      method:"GET",
+                                      async:true,
+                                      success:(response)=>
+                                      {
+                                        console.log("Get Data From Product : ",response);
+                                        let str = "<ol>"
+                                            let names = (response.map((user)=>{return user.id+" "+user.name+" "+user.cost}));
+                                            for(var i=0;i<names.length;i++)
+                                            {
+                                                console.log(names);
+                                                str += `<li>${names[i]}</li>`
+                                            }
+                                            str +="</ol>"
+                                        $("#d2").html(str);
+                                      }
+                                  }
+                                  $.ajax(setting2);
+                });
+            });
+        </script>
+
+    </head>
+    <body>
+
+       
+        Enter ID : <input type="text" id="id" name="id"/><br/><br/><br/>
+        Enter Product : <input type="text" id="pname" name="pname"/><br/><br/><br/>
+        Enter Cost : <input type="text" id="cost" name="cost"/><br/><br/><br/>
+        <button id="b1">POST Data From Server(Product Table)</button><br/><br/>
+        <button id="b2">Show Data</button>
+        <div id="d1"></div>
+        <div id="d2"></div>
+
+    </body>
+</html>

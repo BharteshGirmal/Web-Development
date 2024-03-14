@@ -1,0 +1,22 @@
+<!--
+      3.  Write an html that shows text field  and a button and a table
+		when the button is clicked add the content of text field as a new row in the table.
+-->
+
+<html>
+      <script>
+            function fun1()
+            {
+                  var x= document.getElementById("show").value ;
+                  var table="<table border='4'><tr><th>Value</th><tr><td>"+x+"</td></tr></tr></table>"
+                  document.getElementById("display").innerHTML=table;
+            }
+      </script>
+      <body>
+           <label for="Enter the Text">Enter the Text</label>
+           <input type="text" id="show" name="New Row"/> 
+           <br/><br/>
+            <button onclick="fun1()">Show Table</button>
+            <pre id="display"></pre>
+      </body>
+</html>

@@ -1,0 +1,56 @@
+<!--
+      5.   Write an html that shows a textfield and a showPrime button
+		when the user enters a number and clicks button
+			tell if the number is PRIME or NOT
+	        {HINT :  use parseInt( )  API    }
+-->
+<html>
+      <head>
+      <script>
+            function checkPrime()
+            {
+                  let flag=true;
+
+                  var number=parseInt(document.getElementById("num").value);
+                 
+                  for(var i=2;i<=number-1;i++)
+                  {
+                        if(number%i == 0)
+                        {
+                              flag=false; 
+                              break;
+                        }   
+                  }
+                  if(flag == true)
+                  {           
+                        console.log("This is a Prime No")
+                        var num1= document.getElementById("d1")
+                        num1.innerHTML="<b>The Number "+number+" is a prime Number</b>"
+                               
+                  }
+                  else
+                  {
+                        console.log("This is a Not a Prime No")
+                        var num2= document.getElementById("d1")
+                        num2.innerHTML="<b>The Number "+number+" is Not a prime Number</b>"
+                  }  
+            }
+
+      </script>
+      </head>
+      <body>
+      <fieldset>
+      <center>
+            <b>Enter the Number :  </b>  
+            <input type="text" id="num" name="number">
+            <br/><br/>
+            <button onclick="checkPrime()">Check For Prime Number</button>
+            <br/>
+            <br/>
+            <div id="d1">
+                  
+            </div>
+      </center>
+      </fieldset>
+      </body>
+</html>

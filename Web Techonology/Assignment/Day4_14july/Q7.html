@@ -1,0 +1,78 @@
+<!--
+      7.  write an html shows an array of 10 numbers
+		show a dropdown -  show squares, show cubes , show factorials 
+		onchange of the dropdown show the modified array instead of the original array 
+		[ use map function  ]
+-->
+<html>
+      <head>
+            <script>
+            function Oprator()
+            {
+                  var arr=[1,2,3,4,5,6,7,8,9];
+                  document.getElementById("sp").innerHTML="<b> Original Array [ "+arr+" ]</b>";
+                 // console.log(arr);
+                  var op=document.getElementById("op");
+                  console.log(op.value);
+                  var fun=op.options[op.selectedIndex];
+                  console.log(fun);
+
+                  if(fun.value === "suqare")
+                  {
+                        var sq=arr.map(x=>x*x);
+                        console.log(sq);
+                        document.getElementById("sp2").innerHTML=sq;
+                  }
+                  if(fun.value ==="cube")
+                  {
+                        var cube=arr.map(x=>x*x*x);
+                        console.log(cube);
+                        document.getElementById("sp2").innerHTML=cube;
+                  }
+                  if(fun.value === "fact")
+                  {
+                        var fact=arr.map((e)=>
+                        {
+                              f=1;
+                              for(var i=1;i<=e;i++)
+                              {
+                                    f=f*i;
+                              }
+                              return f;
+                        });
+
+                        console.log(fact);
+                        document.getElementById("sp2").innerHTML=fact;
+                  }
+                  else
+                        return false;
+                  }
+            </script>
+            <style>
+                  span
+                  {
+                        font-size: large;
+                        color: brown;
+                        font: bold;
+                        box-shadow: 2em;
+                  }
+            </style>
+      </head>
+      <body>
+            <center>
+                  <fieldset>
+                       <h2>Select Any Any Oprator To Perform the Action</h2>
+                       <span id="sp"></span> 
+                       <br><br>
+                  <select id="op" onchange="Oprator()">
+                        <option value="None">None</option>
+                       <option value="suqare">Squares</option>
+                       <option value="cube">Cubes</option>
+                       <option value="fact">Factorials</option>
+                  </select>
+                  <br><br>
+                  <span id="sp2"></span> 
+                  </fieldset>
+            </center>
+      </body>
+</html>

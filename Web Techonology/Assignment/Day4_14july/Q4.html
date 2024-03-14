@@ -1,0 +1,41 @@
+<!--
+      4.  write an html that has a input text field . when user enters a data 
+      in the textfield add the first 3 letters of the text in an array in uppercase
+      show the array in <ul>   [use onchange event ]
+-->
+
+<html>
+      <head>
+            <script>
+                  var arr=[];
+                  function Fun1()
+                  {
+                        var name=document.getElementById("name").value;
+                        var str="";
+                        arr.push(name.slice(0,3).toUpperCase());
+                        
+                        for(var i=0;i<arr.length;i++)
+                        {
+                              console.log(arr[i]);
+                              str+="<li>"+arr[i]+"</li>";
+                        }
+                        document.getElementById("u1").innerHTML=str;
+                  }
+            </script>
+            <style>
+
+            </style>
+      </head>
+      <body>
+            <center>
+                  <fieldset>
+                  <form onsubmit="return Fun1()">
+                        <h1>Enter the Name / Text </h1>
+                        <input type="text" name="name" id="name" onchange="Fun1()">
+                        <br/><br/>
+                        <span id="u1"></span>
+                  </form>
+                  </fieldset>
+            </center>
+      </body>
+</html>

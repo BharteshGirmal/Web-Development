@@ -1,0 +1,85 @@
+<!--
+      1.  Write a Javascript  mylib.js [Hint include this js file using <script src=....  >  ]
+		create a class Product using ES6 class keyword
+		the product has a name,desc and cost properties
+		the product has a show method that shows all properties
+      Write an html that has 3 textfields to accept name desc and cost
+	      when user clicks a save button create a product object using values from textfields and add it to an array 
+		show the array in a table format below
+-->
+
+<html>
+      <script src="./MyLib.js"></script>
+      <head>
+            <script>
+                  var arr=[];
+                  function ProductFun()
+                  {
+                        var str="";
+                        var name1=document.getElementById("name").value;
+                        var des1=document.getElementById("des").value;
+                        var cost1=document.getElementById("cost").value;
+
+                        let prod=new Product(name1,des1,parseInt(cost1));
+                        // Calling the Constructor of product class
+
+                        if(name1!="" && des1!="" && cost1!="")
+                        {
+
+                              prod.show();
+                              console.log(prod);
+                              arr.push(prod); // adding the elements in array
+                              str+="<table border='5'><tr><th> Product Name </th><th> Description </th><th> Cost</th></tr>";
+                              for(var i=0;i<arr.length;i++)
+                              {
+                                    str+="<tr><td>"+arr[i]._name+"</td><td>"+arr[i]._desc+"</td><td>"+arr[i]._cost+"</td></tr>"
+                              }
+                              document.getElementById("sp").innerHTML=str+"</table>";
+                              document.getElementById("name").value="";
+                              document.getElementById("des").value="";
+                              document.getElementById("cost").value="";
+                        }
+                        else
+                              alert("The Fields are Empty...");
+                  }
+            </script>
+            <center>
+                  <h1><b><i>Product Table</i></b></h1>
+            </center>
+            <style>
+                 fieldset
+                 {
+                  border: beige;
+                  background-color: blueviolet;
+                 } 
+                 body
+                 {
+                  color: aqua;
+                  font: 300;
+                  font-size: large;
+                  background-color: black;
+                 }
+                 table
+                 {
+                  border-color: deeppink;
+                 }
+            </style>
+      </head>
+      <body>
+            <center>
+                  <fieldset>
+                        <h2>Enter the Product Name</h2>
+                        <input type="text" id="name" name="name">
+                        <h2>Enter the Description</h2>
+                        <input type="text" id="des" name="descrip">
+                        <h2>Enter the Product Cost</h2>
+                        <input type="text" id="cost" name="cost">
+                        <br><br>
+                        <input type="submit" value="Save" onclick="ProductFun()">
+                       &emsp; <input type="reset" value="Reset" onclick="" id="r1">
+                        <br><br>
+                        <span id="sp"></span>
+                  </fieldset>
+            </center>
+      </body>
+</html>

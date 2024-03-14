@@ -1,0 +1,54 @@
+<!--
+      7. Write an HTML file that accepts a number from the user
+		and on button click - display the maths table of that number 
+		for ex if the number is 2 
+		2*1=2
+		2*2=4
+		...
+		2*10 =20
+	  the maths-table should be white font, background red
+		double rounded border
+-->
+<html>
+      <head>
+            <style>
+                  table
+                  {
+                        table-layout: auto;
+                        background-color:red;
+                        color: white;
+                        border-color: white;
+                  }
+            </style>
+            <script>
+                  function Table()
+                  {
+                        var num= document.getElementById("num").value
+                        var span="<table border='5'><tr><th>Number</th><th>Table</th></tr>"
+                        for(var i=1;i<=10;i++)
+                        {
+                              span=span+"<tr><td>"+num+"*"+i+"<td>"+num*i+"<td></tr>"
+                        }
+                        span=span+"</table>"
+                        document.getElementById("sp").innerHTML=span
+                  }
+
+                  function Table2()
+                  {
+                        var num= document.getElementById("num").value
+                        for(var i=1;i<=10;i++)
+                        {
+
+                        }
+                  }
+            </script>
+      </head>
+      <body>
+            <center>
+                  <b>Enter the Number</b><br/>
+                  <br/> <input type="number" name="No" id="num"><br/>
+                  <br/><button onclick="Table()">Show Table</button>
+                  <br/><br/><span id="sp"></span>
+            </center>
+      </body>
+</html>
